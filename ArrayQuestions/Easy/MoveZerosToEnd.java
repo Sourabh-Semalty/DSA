@@ -24,7 +24,7 @@ public class MoveZerosToEnd {
     // }
 
     // Solution 2: Two - pointer solution extra time complexity
-    
+
     // public static void main(String[] args) {
     //     int[] nums = { 0,0,1};
     //     int size = nums.length;
@@ -47,5 +47,22 @@ public class MoveZerosToEnd {
     //     }
     // }
 
+    // Solution 3: final
+    public static void main(String[] args) {
+        int[] nums = { 0,0,1};
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            if (nums[right] != 0) {
+                int temp = nums[right];
+                nums[right] = nums[left];
+                nums[left] = temp;
+                left++;
+            }
+        }
+
+        for(int i=0;i< nums.length;i++) {
+            System.out.println(nums[i]);
+        }
+    }
 }
 
